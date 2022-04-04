@@ -59,14 +59,17 @@ public class PidByPsHandler extends AbstractPidHandler implements PidHandler {
 
     @Override
     protected int doGetPid() {
-        String psInfo = getPsInfo();
-        if (!Strings.isNullOrEmpty(psInfo)) {
-            ArrayListMultimap<String, PsInfo> multimap = parsePsInfo(psInfo);
-            List<PsInfo> infos = multimap.get(TOMCAT_COMMAND);
-            if (infos != null && infos.size() > 0) {
-                for (PsInfo info : infos) {
-                    if (TOMCAT_USER.equalsIgnoreCase(info.getUser())) {
-                        return info.getPid();
+        String os = System.getProperty("os.name");
+        if(!os.toLowerCase().startsWith("win")) {
+            String psInfo = getPsInfo();
+            if (!Strings.isNullOrEmpty(psInfo)) {
+                ArrayListMultimap<String, PsInfo> multimap = parsePsInfo(psInfo);
+                List<PsInfo> infos = multimap.get(TOMCAT_COMMAND);
+                if (infos != null && infos.size() > 0) {
+                    for (PsInfo info : infos) {
+                        if (TOMCAT_USER.equalsIgnoreCase(info.getUser())) {
+                            return info.getPid();
+                        }
                     }
                 }
             }
