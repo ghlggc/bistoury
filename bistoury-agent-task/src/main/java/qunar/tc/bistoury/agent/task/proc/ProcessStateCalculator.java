@@ -76,7 +76,7 @@ public class ProcessStateCalculator {
     public FullState getCurrentFullState(int pid) {
         try {
             CpuState cpuState = StatParser.getInstance().parseCpuInfo();
-            File processFile = new File("/proc", String.valueOf(pid));
+            File processFile = new File("D:\\gonghanglin\\Desktop\\fsdownload\\proc", String.valueOf(pid));
             ProcessState processState = StatParser.getInstance().parseProcessInfo(pid);
             File taskFile = new File(processFile, "task");
             File[] taskFiles = taskFile.listFiles();

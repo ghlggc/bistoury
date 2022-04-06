@@ -38,7 +38,7 @@ class StatParser {
 
     private static final Splitter SPACE_SPLITTER = Splitter.on(" ").omitEmptyStrings();
     private static final StatParser INSTANCE = new StatParser();
-    private static final String PROC_PATH = "/proc";
+    private static final String PROC_PATH = "D:\\gonghanglin\\Desktop\\fsdownload\\proc";
 
     private StatParser() {
     }

@@ -44,7 +44,7 @@ public class ProcUtil {
     private static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormat.forPattern("mm:ss.SS");
 
     private static final int CPU_NUM;
-    private static final String cpuInfoFilePath = "/proc/cpuinfo";
+    private static final String cpuInfoFilePath = "D:\\gonghanglin\\Desktop\\fsdownload\\proc\\cpuinfo";
 
     static {
         int cpuNum = 0;
