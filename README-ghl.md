@@ -12,4 +12,4 @@ agent通过调用proxy端口进行通信，proxy和ui通过注册到同一个zk�
 5.分别启动ui( sh bistoury-ui.sh -j /export/servers/jdk1.6.0_25 start)，proxy(sh bistoury-proxy.sh  -j /export/servers/jdk1.6.0_25 start)，
 agent(sh bistoury-agent.sh -j /export/servers/jdk1.6.0_25 start)
 
-FAQ1.bin中的配置文件报错，由于windows和linux不兼容 dos2unix -q bistoury-agent-env.sh 
+FAQ1.bin中的配置文件报错：: invalid option name2: set: pipefail ，由于windows和linux不兼容vi bistoury-agent-env.sh  :set ff=unix dos2unix -q bistoury-agent-env.sh 
